@@ -11,8 +11,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-builders/custom-esbuild:application",
           "options": {
+            "plugins": [
+              "./esbuild/sentry-plugin.ts"
+            ],
             "outputPath": "dist/sentry-esbuild-plugin-bug",
             "index": "src/index.html",
             "browser": "src/main.ts",
