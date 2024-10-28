@@ -11,14 +11,14 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-esbuild:application",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "plugins": [
-              "./esbuild/sentry-plugin.ts"
-            ],
+            "customWebpackConfig": {
+              "path": "./webpack/webpack.config.js"
+            },
             "outputPath": "dist/sentry-esbuild-plugin-bug",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
